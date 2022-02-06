@@ -1,0 +1,21 @@
+<div style="width: 60%" class="mx-auto mt-3 mb-4 d-flex justify-content-around">
+  <button class="btn btn-dark" (click)="incrementValue()">Increment</button>
+  <button class="btn btn-warning" (click)="decrementValue()">Decrement</button>
+  <button class="btn btn-danger" (click)="resetValue()">Reset</button>
+</div>
+<div class="col-md-12 mb-3 d-flex justify-content-between">
+  <input
+    #customCount
+    type="number"
+    style="width: 75%"
+    class="form-control"
+    placeholder="Custom value"
+  />
+  <button class="btn btn-dark" (click)="customValue(customCount.value)">
+    Add Count
+  </button>
+</div>
+<h5 class="mx-auto">Author: {{ author }}</h5>
+<button class="btn btn-success mx-auto" (click)="authorChange()">
+  Change Author
+</button>
