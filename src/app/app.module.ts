@@ -8,7 +8,6 @@ import { CounterOutputComponent } from './counter/counter-output/counter-output.
 import { CounterButtonsComponent } from './counter/counter-buttons/counter-buttons.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './shared/components/header/header.component';
-import { PostsListComponent } from './posts/posts-list/posts-list.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { UsersListComponent } from './users/users-list/users-list.component';
 import { ActionReducerMap, StoreModule } from '@ngrx/store';
@@ -23,6 +22,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UsersEffects } from './users/state/users.effects';
 import { SortPipe } from './services/sort.pipe';
 import { FilterPipe } from './services/filter.pipe';
+import { PostsModule } from './posts/posts.module';
 
 @NgModule({
   declarations: [
@@ -32,7 +32,6 @@ import { FilterPipe } from './services/filter.pipe';
     CounterButtonsComponent,
     HomeComponent,
     HeaderComponent,
-    PostsListComponent,
     NotFoundComponent,
     UsersListComponent,
     AddUserComponent,

@@ -12,7 +12,11 @@ import { UsersMainComponent } from './users/users-main/users-main.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'counter', component: CounterMainComponent },
-  { path: 'posts', component: PostsListComponent },
+  {
+    path: 'posts',
+    loadChildren: () =>
+      import('./posts/posts.module').then((m) => m.PostsModule),
+  },
   {
     path: 'users',
     component: UsersMainComponent,
