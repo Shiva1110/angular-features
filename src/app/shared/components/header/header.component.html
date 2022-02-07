@@ -17,7 +17,44 @@
   <a class="nav-link" [routerLink]="['/posts']" routerLinkActive="active"
     >Posts</a
   >
-  <a class="nav-link" [routerLink]="['/users']" routerLinkActive="active"
+  <a
+    class="nav-link dropdown-toggle"
+    data-bs-toggle="dropdown"
+    role="button"
+    [class.active]="
+      router.isActive('/users', true) ||
+      router.isActive('/users/addUser', true) ||
+      router.isActive('/users/updateUser', true)
+    "
+    aria-expanded="false"
     >Users</a
   >
+  <ul class="dropdown-menu">
+    <li>
+      <a
+        class="dropdown-item"
+        [routerLink]="['/users']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        >Users List</a
+      >
+    </li>
+    <li><hr class="dropdown-divider" /></li>
+    <li>
+      <a
+        class="dropdown-item"
+        [routerLink]="['/users/addUser']"
+        routerLinkActive="active"
+        >New User</a
+      >
+    </li>
+    <li>
+      <a
+        class="dropdown-item"
+        [routerLink]="['/users/updateUser']"
+        routerLinkActive="active"
+        >Update User</a
+      >
+    </li>
+  </ul>
 </div>

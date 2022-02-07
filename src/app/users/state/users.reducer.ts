@@ -1,21 +1,14 @@
 import { User } from 'src/app/models/users.model';
 import { UsersAction, UsersActionTypes } from './users.actions';
 
-export const APPLICATION_FEATURE_KEY = 'application';
+export const USER_FEATURE_KEY = 'users';
 
 export interface UsersState {
   users: User[];
 }
 
 export const usersInitialState: UsersState = {
-  users: [
-    {
-      id: 1,
-      name: 'Shivakumar M',
-      username: 'ShivaDmn',
-      email: 'shivakumarm250@gmail.com',
-    },
-  ],
+  users: [],
 };
 
 export function usersReducer(
@@ -27,6 +20,14 @@ export function usersReducer(
       return {
         ...state,
         users: action.payload,
+      };
+    }
+
+    case UsersActionTypes.POST_USER_SUCCESS: {
+      let user = { ...action.payload };
+      return {
+        ...state,
+        users: [...state.users, user],
       };
     }
 

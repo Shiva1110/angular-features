@@ -1,21 +1,14 @@
 import { Post } from 'src/app/models/posts.model';
 import { PostsAction, PostsActionTypes } from './posts.actions';
 
-export const APPLICATION_FEATURE_KEY = 'application';
+export const POST_FEATURE_KEY = 'posts';
 
 export interface PostsState {
   posts: Post[];
 }
 
 export const postsInitialState: PostsState = {
-  posts: [
-    {
-      userId: 1,
-      id: 1,
-      title: 'Sample Title 1',
-      body: 'quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut',
-    },
-  ],
+  posts: [],
 };
 
 export function postsReducer(

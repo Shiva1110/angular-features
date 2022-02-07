@@ -1,1 +1,29 @@
-<p>users-list works!</p>
+<h2>Users List</h2>
+<input
+  type="text"
+  [(ngModel)]="searchUser"
+  class="form-control mt-5"
+  placeholder="Search users by name"
+/>
+<div class="mt-4 table-wrapper-scroll-y">
+  <table
+    style="text-align: left"
+    *ngIf="users?.length"
+    class="table table-sm table-striped table-dark"
+  >
+    <thead>
+      <tr>
+        <th scope="col">Sl No.</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email Id</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users | sort | filter: searchUser; let i = index">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>{{ user.profileName }}</td>
+        <td>{{ user.email }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
